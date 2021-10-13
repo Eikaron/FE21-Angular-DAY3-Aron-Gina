@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'; //Package to grab URL value
 import { products } from '../products';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -12,7 +13,12 @@ export class ProductDetailsComponent implements OnInit {
 
   product: any;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private CS: CartService) { } 
+
+  addToCart2(prod: any){
+    alert("Item added");
+    this.CS.addToCart(prod);
+  }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
