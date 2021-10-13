@@ -25,4 +25,10 @@ export class CartComponent implements OnInit {
     this.items = this.CS.getItems();
   }
 
+  onSubmit(){
+
+    this.checkoutForm.reset(); //empty form
+    this.items = this.CS.clearCart();
+  }
+
 }
