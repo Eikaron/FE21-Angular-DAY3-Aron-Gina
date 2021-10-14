@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { pets } from '../pets';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-pet-details',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PetDetailsComponent implements OnInit {
 
-  constructor() { }
+  pet: any;
+
+  constructor(private route: ActivatedRoute, private CS: CartService) {} 
+    
+  addToCart(pet: any){
+    alert("You added a pet! Yay!");
+    this.CS.addToCart(pet);
+  }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      let id: any = params.get('petID');
+      this.pet = pets[id];
+    });
   }
 
 }

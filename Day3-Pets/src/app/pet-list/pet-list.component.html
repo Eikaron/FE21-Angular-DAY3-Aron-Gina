@@ -1,3 +1,15 @@
-<h1> Meet our Pets!</h1>
+<h1 class="mb-3"> Meet our Pets!</h1>
 
- 
+<div class="flex row">
+
+<div *ngFor="let pet of pets; index as petID" class="card m-2" style="width: 18rem;">
+    <img src="{{pet.img}}" class="card-img-top" alt="Pet">
+    <div class="card-body">
+        <h5 class="card-title font-weight-bold text-center">
+            <a routerLink="pets/{{petID}}">{{pet.name}}</a>
+        </h5>
+      <p *ngIf ="pet.description"> {{pet.description}}</p>
+    </div>
+  </div>
+
+</div>

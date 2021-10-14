@@ -1,1 +1,18 @@
-<p>pet-details works!</p>
+<h1> Say Hello to {{pet.name}}!</h1>
+
+<div class="card m-2" style="width: 18rem;">
+    <img src="{{pet.img}}" class="card-img-top" alt="Pet">
+    <hr>
+    <ul>
+        <li>Name: {{pet.name}}</li>
+        <li>Age: {{pet.age}} Years </li>
+        <li>Breed: {{pet.breed}}</li>
+    </ul>
+
+    <div class="card-body">
+        <p>{{pet.description}}</p>
+        <h5 class="font-weight-bold">{{pet.price}}€</h5>
+      </div>
+  </div>
+
+  <button class="btn btn-lg btn-success ml-4" (click)="addToCart(pet)"> This is my new pet! </button>
