@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,EAAE,CAAC;EACC,KAAK,EAAE,MAAM;EACb,WAAW,EAAE,IAAI;EACjB,MAAM,EAAE,MAAM;EACd,UAAU,EAAE,MAAM;CAAG",
+    "sources": [
+        "pet-list.component.sass"
+    ],
+    "names": [],
+    "file": "pet-list.component.css"
+}
